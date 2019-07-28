@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vue使用node连接mysql实现数据的增删改查</title>
+<style>
+.form, table{
+  border: 1px solid red;
+  width: 250px;
+  margin: auto;
+}
+.form span{
+  display: block;
+}
+table{
+  border: 1px solid red;
+  width: 500px;
+  margin: auto;
+  border-collapse: collapse;
+}
+table thead tr{
+  background-color: blue;
+}
+</style>
+<!-- 生产环境版本，优化了尺寸和速度 -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <fieldset class="form">
+      <legend>用户信息</legend>
+      <span>
+      姓名：<input v-model="model.name" type="text" />
+    </span>
+    <span>
+      性别：<select v-model="model.gender">
+        <option value ="男">男</option>
+        <option value ="女">女</option>
+      </select>
+    </span>
+    <span> 电话：<input v-model="model.telphone" type="text" /> </span>
+    <button @click="save">保存</button>
+    <button @click="reset">重置</button>
+  </fieldset>
+  <table border="1">
+    <thead>
+      <tr>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>电话</td>
+        <td>操作</td>
+      </tr>
+    </thead>
+    <tbody>
+    <tr v-for="(item, index) in tableData">
+      <td>{{ item.name }}</td>
+      <td>{{ item.gender }}</td>
+      <td>{{ item.telphone }}</td>
+      <td>
+        <button @click="deleteFun(index,item)">删除</button>
+        <button @click="editFun(item)">编辑</button>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  </div>
+</body>
+</html>
+<script>
+    new Vue({
+      el: "#app",
+      data: {
+        model: {
+          name: "",
+          gender: "",
+          telphone: ""
+        },
+        tableData: [{
+          id: 1,
+          name: "张三",
+          gender: "男",
+          telphone: "18821245478"
+        },
+        {
+          id: 2,
+          name: "李四",
+          gender: "男",
+          telphone: "18233434343"
+        },
+        {
+          id: 3,
+          name: "王说",
+          gender: "女",
+          telphone: "14545343433"
+        }]
+      },
+      methods: {
+        /**
+         * 保存数据
+         */
+        save: function(){
+          if(this.model.id) {
+            this.tableData.splice(this.tableData.findIndex(v => v.id === this.model.id), 1, this.model);
+          } else {
+            this.tableData.push(Object.assign({}, this.model));
+          }
+          this.reset();
+        },
+        /**
+         * 重置数据
+         */
+        reset: function() {
+          this.model = {
+            name: "",
+            gender: "",
+            telphone: ""
+          };
+        },
+        /**
+         * 删除数据
+         */
+        deleteFun: function(index) {
+          this.tableData.splice(index, 1);
+        },
+        /**
+         * 编辑数据
+         */
+        editFun: function(row) {
+          Object.assign(this.model, row);
+        }
+      }
+    })
+</script>
