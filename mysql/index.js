@@ -61,7 +61,6 @@ app.post("/api/addInfo", function (req, res) {
  */
 app.post("/api/updateInfo", function (req, res) {
     let sqlStr = `update vue_practice_crud set name = '${req.body.name}', gender = '${req.body.gender}', telphone = '${req.body.telphone}' where id = ${req.body.id} `;
-    console.log(sqlStr);
     conn.query(sqlStr, (err, result) => {
         if (err) {
             return res.json({
