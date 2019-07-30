@@ -1,18 +1,17 @@
 <template>
-  <div class="main">
-    主面板
+  <div>
+
   </div>
 </template>
-
 <script>
-
 export default {
-  name: 'App'
-}
+  name: "Recomment",
+  data: function() {
+    return {
+
+    }
+  }
+};
 </script>
-
 <style scoped lang="stylus" ref="stylesheet/stylus">
-.main
-  background green
-
 </style>

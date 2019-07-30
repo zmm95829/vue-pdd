@@ -1,18 +1,17 @@
 <template>
-  <div class="main">
-    主面板
+  <div>
+    个人中心
   </div>
 </template>
-
 <script>
-
 export default {
-  name: 'App'
-}
+  name: "Me",
+  data: function() {
+    return {
+
+    }
+  }
+};
 </script>
-
 <style scoped lang="stylus" ref="stylesheet/stylus">
-.main
-  background green
-
 </style>

@@ -1,18 +1,17 @@
 <template>
-  <div class="main">
-    主面板
+  <div>
+    搜索
   </div>
 </template>
-
 <script>
-
 export default {
-  name: 'App'
-}
+  name: "Search",
+  data: function() {
+    return {
+
+    }
+  }
+};
 </script>
-
 <style scoped lang="stylus" ref="stylesheet/stylus">
-.main
-  background green
-
 </style>
