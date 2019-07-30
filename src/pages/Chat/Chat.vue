@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="chat">
     聊天
   </div>
 </template>
@@ -14,4 +14,7 @@ export default {
 };
 </script>
 <style scoped lang="stylus" ref="stylesheet/stylus">
+.chat
+  background-color blue
+  height calc(100% - 50px)
 </style>

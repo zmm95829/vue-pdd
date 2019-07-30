@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="me">
     个人中心
   </div>
 </template>
@@ -14,4 +14,7 @@ export default {
 };
 </script>
 <style scoped lang="stylus" ref="stylesheet/stylus">
+.me
+  background-color purple
+  height calc(100% - 50px)
 </style>
