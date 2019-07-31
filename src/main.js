@@ -1,8 +1,12 @@
 import Vue from 'vue'
+import LyTab from "ly-tab";
 import App from './App'
+
 
 // 引入路由器
 import router from "./router/index";
+
+Vue.use(LyTab);
 new Vue({
   el: '#app',
   router,

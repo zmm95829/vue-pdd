@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "ly-tab": "^2.1.2",
     "mysql": "^2.17.1",
     "vue": "^2.5.2",
     "vue-resource": "^1.5.1",
