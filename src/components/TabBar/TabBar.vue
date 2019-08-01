@@ -1,24 +1,24 @@
 <template>
   <div class="bottom-tab">
     <span class="tab-item" @click="switchTo('/home')">
-      <img :src="$route.path === '/home' ? tabBarImgArray[0].selected : tabBarImgArray[0].normal" alt />
-      <span :class="{ 'on': $route.path === '/home' }">首页</span>
+      <img :src="$route.path.includes('/home') ? tabBarImgArray[0].selected : tabBarImgArray[0].normal" alt />
+      <span :class="{ 'on': $route.path.includes('/home') }">首页</span>
     </span>
     <span class="tab-item" @click="switchTo('/recomment')">
-      <img :src="$route.path === '/recomment' ? tabBarImgArray[1].selected : tabBarImgArray[1].normal" alt />
-      <span :class="{ 'on': $route.path === '/recomment' }">推荐</span>
+      <img :src="$route.path.includes('/recomment') ? tabBarImgArray[1].selected : tabBarImgArray[1].normal" alt />
+      <span :class="{ 'on': $route.path.includes('/recomment') }">推荐</span>
     </span>
     <span class="tab-item" @click="switchTo('/search')">
-      <img :src="$route.path === '/search' ? tabBarImgArray[2].selected : tabBarImgArray[2].normal" alt />
-      <span :class="{ 'on': $route.path === '/search' }">搜索</span>
+      <img :src="$route.path.includes('/search') ? tabBarImgArray[2].selected : tabBarImgArray[2].normal" alt />
+      <span :class="{ 'on': $route.path.includes('/search') }">搜索</span>
     </span>
     <span class="tab-item" @click="switchTo('/chat')">
-      <img :src="$route.path === '/chat' ? tabBarImgArray[3].selected : tabBarImgArray[3].normal" alt />
-      <span :class="{ 'on': $route.path === '/chat' }">聊天</span>
+      <img :src="$route.path.includes('/chat') ? tabBarImgArray[3].selected : tabBarImgArray[3].normal" alt />
+      <span :class="{ 'on': $route.path.includes('/chat') }">聊天</span>
     </span>
     <span class="tab-item" @click="switchTo('/me')">
-      <img :src="$route.path === '/me' ? tabBarImgArray[4].selected : tabBarImgArray[4].normal" alt />
-      <span :class="{ 'on': $route.path === '/me' }">个人中心</span>
+      <img :src="$route.path.includes('/me') ? tabBarImgArray[4].selected : tabBarImgArray[4].normal" alt />
+      <span :class="{ 'on': $route.path.includes('/me') }">个人中心</span>
     </span>
   </div>
 </template>
