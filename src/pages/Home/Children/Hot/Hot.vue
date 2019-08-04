@@ -20,17 +20,20 @@
       <div class="swiper-pagination"></div>
     </div>
       <hot-nav/>
+      <hot-shop-list/>
   </div>
 </template>
 <script>
 import Swiper from "swiper";
 import HotNav from "./HotNav";
+import HotShopList from "./HotShopList";
 import "swiper/dist/css/swiper.min.css";
 
 export default {
   name: "Hot",
   components:{
-    HotNav
+    HotNav,
+    HotShopList
   },
   data: function() {
     return {};
