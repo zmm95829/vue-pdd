@@ -7,7 +7,6 @@ import Recomment from "./../pages/Recomment/Recomment";
 import Search from "./../pages/Search/Search";
 import Chat from "./../pages/Chat/Chat";
 import Me from "./../pages/Me/Me";
-import Hot from "./../pages/Home/Children/Hot.vue";
 // 2.声明使用
 Vue.use(VueRouter);
 // 3.输出路由对象
@@ -18,7 +17,7 @@ export default new VueRouter({
       path: "/home",
       component: Home,
       children: [
-        { path: "hot", component: () => import("@/pages/Home/Children/Hot.vue")},
+        { path: "hot", component: () => import("@/pages/Home/Children/Hot/Hot.vue")},
         { path: "box", component: () => import("@/pages/Home/Children/Box.vue")},
         { path: "ele", component: () => import("@/pages/Home/Children/Ele.vue")},
         { path: "food", component: () => import("@/pages/Home/Children/Food.vue")},
